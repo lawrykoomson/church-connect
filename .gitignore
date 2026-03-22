@@ -43,3 +43,10 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Sensitive files
+lib/services/sheets_service.dart
+lib/services/email_service.dart
+lib/services/paystack_service.dart
+lib/firebase_options.dart
+android/app/google-services.json
