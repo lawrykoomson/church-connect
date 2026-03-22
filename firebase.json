@@ -1,0 +1,36 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "church-management-system-d7d3a",
+          "appId": "1:909935097617:android:a99e28c3e379c221d7beb0",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "church-management-system-d7d3a",
+          "configurations": {
+            "android": "1:909935097617:android:a99e28c3e379c221d7beb0",
+            "web": "1:909935097617:web:dc4e7de3e0b9a120d7beb0"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
