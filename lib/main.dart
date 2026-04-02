@@ -16,7 +16,6 @@ import 'screens/member/giving_summary_screen.dart';
 import 'screens/member/id_card_screen.dart';
 import 'services/notification_service.dart';
 
-// ── Theme Notifier ──
 class ThemeNotifier extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
   ThemeMode get themeMode => _themeMode;
@@ -59,8 +58,6 @@ class _ChurchConnectAppState extends State<ChurchConnectApp> {
       title: 'ChurchConnect',
       debugShowCheckedModeBanner: false,
       themeMode: themeNotifier.themeMode,
-
-      // Light theme
       theme: ThemeData(
         brightness: Brightness.light,
         primaryColor: AppColors.primary,
@@ -74,8 +71,6 @@ class _ChurchConnectAppState extends State<ChurchConnectApp> {
           },
         ),
       ),
-
-      // Dark theme
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: AppColors.primary,
@@ -90,7 +85,6 @@ class _ChurchConnectAppState extends State<ChurchConnectApp> {
           },
         ),
       ),
-
       home: const SplashScreen(),
       routes: {
         '/login': (_) => const LoginScreen(),
