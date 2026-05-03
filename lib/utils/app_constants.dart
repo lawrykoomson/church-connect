@@ -1,33 +1,44 @@
 class AppConstants {
-  static const String appName = 'ChurchConnect';
-  static const String appTagline = 'Church Management System';
-  static const String adminPortal = 'Admin Portal Only';
+  // ── Church Details ──
+  static const String churchName        = 'Great Mountains Of God International Ministry';
+  static const String churchShortName   = 'GMOGIM';
+  static const String churchMotto       = 'Great ooo... Anointing ooo...';
+  static const String churchLocation    = 'Kasoa, Galilea - Cola Factory';
+  static const String churchPhone1      = '+233 24 762 0088';
+  static const String churchPhone2      = '+233 26 262 0088';
+  static const String churchEmail       = 'greatmountainsofgod@gmail.com';
+  static const String pastorName        = 'Apostle Wisdom Wetsi';
+  static const String adminEmail        = 'greatmountainsofgod@gmail.com';
 
-  static const String membersCollection = 'members';
+  // ── Firestore Collections ──
+  static const String membersCollection  = 'members';
   static const String paymentsCollection = 'payments';
-  static const String eventsCollection = 'events';
+  static const String eventsCollection   = 'events';
 
+  // ── Departments ──
   static const List<String> departments = [
     'General',
-    'Choir',
     'Youth',
-    "Women's Fellowship",
-    "Men's Fellowship",
+    'Instrumentalist',
+    'Singers',
     'Ushers',
     'Children Ministry',
-    'Prayer Team',
+    'Prayer Warriors',
+    'Pastors',
   ];
 
+  // ── Payment Types ──
   static const List<String> paymentTypes = [
     'Monthly Dues',
     'Tithe',
+    'Offering',
     'Building Fund',
-    'Special Offering',
-    'Harvest',
+    'Welfare',
     'Other',
   ];
 
-  static const String statusPaid = 'Paid';
+  // ── Dues Status ──
+  static const String statusPaid    = 'Paid';
   static const String statusPending = 'Pending';
   static const String statusOverdue = 'Overdue';
 }

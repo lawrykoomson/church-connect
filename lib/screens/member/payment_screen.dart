@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:intl/intl.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/app_constants.dart';
 import '../../services/paystack_service.dart';

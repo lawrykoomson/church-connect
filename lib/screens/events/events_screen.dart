@@ -5,6 +5,7 @@ import '../../utils/app_colors.dart';
 import '../../models/event_model.dart';
 import '../../services/event_service.dart';
 import 'add_event_screen.dart';
+import '../../utils/app_constants.dart';
 
 class EventsScreen extends StatelessWidget {
   const EventsScreen({super.key});
@@ -13,7 +14,7 @@ class EventsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final eventService = EventService();
     final currentUser = FirebaseAuth.instance.currentUser;
-    final isAdmin = currentUser?.email == 'churchconnect71@gmail.com';
+    final isAdmin = currentUser?.email == AppConstants.adminEmail;
 
     return Scaffold(
       backgroundColor: AppColors.background,

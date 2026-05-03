@@ -89,7 +89,7 @@ class _MemberDashboardScreenState extends State<MemberDashboardScreen> {
 
       // Run overdue check if admin
       final currentUser = _auth.currentUser;
-      if (currentUser?.email == 'churchconnect71@gmail.com') {
+      if (currentUser?.email == AppConstants.adminEmail) {
         OverdueService.checkAndSendOverdueReminders().then((count) {
           if (count > 0 && mounted) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -288,6 +288,18 @@ class _MemberDashboardScreenState extends State<MemberDashboardScreen> {
                         ),
                         onPressed: _signOut,
                       ),
+                      if (_auth.currentUser?.email == AppConstants.adminEmail)
+                        IconButton(
+                          icon: const Icon(
+                            Icons.admin_panel_settings,
+                            color: Colors.white,
+                          ),
+                          onPressed: () => Navigator.pushNamed(
+                            context,
+                            '/admin-dashboard',
+                          ),
+                          tooltip: 'Admin Dashboard',
+                        ),
                     ],
                     flexibleSpace: FlexibleSpaceBar(
                       background: Container(
@@ -579,6 +591,60 @@ class _MemberDashboardScreenState extends State<MemberDashboardScreen> {
                                     context,
                                     '/profile',
                                   ).then((_) => _loadMemberData()),
+                                ),
+                                _ActionCard(
+                                  title: 'Announcements',
+                                  icon: Icons.campaign,
+                                  color: const Color(0xFF6A0DAD),
+                                  onTap: () => Navigator.pushNamed(
+                                    context,
+                                    '/announcements',
+                                  ),
+                                ),
+                                _ActionCard(
+                                  title: 'Prayer',
+                                  icon: Icons.volunteer_activism,
+                                  color: const Color(0xFF27AE60),
+                                  onTap: () => Navigator.pushNamed(
+                                    context,
+                                    '/prayer',
+                                  ),
+                                ),
+                                _ActionCard(
+                                  title: 'Directory',
+                                  icon: Icons.people,
+                                  color: const Color(0xFF2980B9),
+                                  onTap: () => Navigator.pushNamed(
+                                    context,
+                                    '/directory',
+                                  ),
+                                ),
+                                _ActionCard(
+                                  title: 'Attendance',
+                                  icon: Icons.how_to_reg,
+                                  color: const Color(0xFF16A085),
+                                  onTap: () => Navigator.pushNamed(
+                                    context,
+                                    '/attendance',
+                                  ),
+                                ),
+                                _ActionCard(
+                                  title: 'Certificate',
+                                  icon: Icons.workspace_premium,
+                                  color: Colors.amber,
+                                  onTap: () => Navigator.pushNamed(
+                                    context,
+                                    '/certificate',
+                                  ),
+                                ),
+                                _ActionCard(
+                                  title: 'Bulletin',
+                                  icon: Icons.menu_book,
+                                  color: const Color(0xFF8E44AD),
+                                  onTap: () => Navigator.pushNamed(
+                                    context,
+                                    '/bulletin',
+                                  ),
                                 ),
                               ],
                             ),

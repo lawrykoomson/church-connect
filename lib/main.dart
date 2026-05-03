@@ -15,6 +15,13 @@ import 'screens/events/events_screen.dart';
 import 'screens/member/giving_summary_screen.dart';
 import 'screens/member/id_card_screen.dart';
 import 'services/notification_service.dart';
+import 'screens/announcements/announcements_screen.dart';
+import 'screens/prayer/prayer_screen.dart';
+import 'screens/directory/member_directory_screen.dart';
+import 'screens/attendance/attendance_screen.dart';
+import 'screens/certificate/tithe_certificate_screen.dart';
+import 'screens/bulletin/bulletin_screen.dart';
+import 'screens/admin/admin_dashboard_screen.dart';
 
 class ThemeNotifier extends ChangeNotifier {
   ThemeMode _themeMode = ThemeMode.light;
@@ -97,6 +104,13 @@ class _ChurchConnectAppState extends State<ChurchConnectApp> {
         '/giving-summary': (_) => const GivingSummaryScreen(),
         '/id-card': (_) => const IdCardScreen(),
         '/admin': (_) => const EventsScreen(),
+        '/announcements': (_) => const AnnouncementsScreen(),
+        '/prayer': (_) => const PrayerScreen(),
+        '/directory': (_) => const MemberDirectoryScreen(),
+        '/attendance': (_) => const AttendanceScreen(),
+        '/certificate': (_) => const TitheCertificateScreen(),
+        '/bulletin': (_) => const BulletinScreen(),
+        '/admin-dashboard': (_) => const AdminDashboardScreen(),
       },
     );
   }

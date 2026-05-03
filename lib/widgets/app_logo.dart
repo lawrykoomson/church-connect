@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import '../utils/app_colors.dart';
 
 class AppLogo extends StatelessWidget {
   final double size;
-  final bool   showText;
+  final bool showText;
 
   const AppLogo({
     super.key,
-    this.size     = 80,
+    this.size = 80,
     this.showText = true,
   });
 
@@ -16,61 +15,74 @@ class AppLogo extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        // Church Logo Image
         Container(
-          width:  size,
+          width: size,
           height: size,
           decoration: BoxDecoration(
-            color:        AppColors.secondary,
-            borderRadius: BorderRadius.circular(size * 0.25),
+            shape: BoxShape.circle,
             boxShadow: [
               BoxShadow(
-                color:      AppColors.secondary.withOpacity(0.4),
+                color: const Color(0xFF6A0DAD).withOpacity(0.4),
                 blurRadius: 20,
-                offset:     const Offset(0, 8),
+                offset: const Offset(0, 8),
               ),
             ],
           ),
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              // Cross
-              Container(
-                width:  size * 0.12,
-                height: size * 0.55,
-                decoration: BoxDecoration(
-                  color:        Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-              ),
-              Container(
-                width:  size * 0.4,
-                height: size * 0.12,
-                margin: EdgeInsets.only(bottom: size * 0.12),
-                decoration: BoxDecoration(
-                  color:        Colors.white,
-                  borderRadius: BorderRadius.circular(4),
-                ),
-              ),
-            ],
+          child: ClipOval(
+            child: Image.asset(
+              'assets/images/church-logo.jpg',
+              width: size,
+              height: size,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) {
+                // Fallback if image not found
+                return Container(
+                  width: size,
+                  height: size,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFF6A0DAD),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.church,
+                    size: size * 0.5,
+                    color: Colors.white,
+                  ),
+                );
+              },
+            ),
           ),
         ),
         if (showText) ...[
           const SizedBox(height: 12),
           Text(
-            'ChurchConnect',
+            'Great Mountains Of God',
             style: TextStyle(
-              fontSize:   size * 0.3,
+              fontSize: size * 0.22,
               fontWeight: FontWeight.bold,
-              color:      Colors.white,
-              letterSpacing: 1.2,
+              color: Colors.white,
+              letterSpacing: 0.5,
             ),
+            textAlign: TextAlign.center,
           ),
           Text(
-            'Connecting the Body of Christ',
+            'International Ministry',
+            style: TextStyle(
+              fontSize: size * 0.16,
+              color: const Color(0xFFE8D5FF),
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Great ooo... Anointing ooo...',
             style: TextStyle(
               fontSize: size * 0.13,
-              color:    Colors.white70,
+              color: Colors.white60,
+              fontStyle: FontStyle.italic,
             ),
+            textAlign: TextAlign.center,
           ),
         ],
       ],

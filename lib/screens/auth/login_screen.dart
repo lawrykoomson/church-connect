@@ -121,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
             const AppLogo(size: 80),
             const SizedBox(height: 8),
             const Text(
-              'Welcome back',
+              'Welcome to GMOGIM',
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.white70,
@@ -329,7 +329,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: GestureDetector(
                       onTap: () {
                         if (_emailController.text.trim() ==
-                                'churchconnect71@gmail.com' &&
+                                'greatmountainsofgod@gmail.com' &&
                             _passwordController.text.trim().isNotEmpty) {
                           Navigator.pushNamed(context, '/admin');
                         }
